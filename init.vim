@@ -1,6 +1,7 @@
 call plug#begin("~/.config/nvim/plugged")
   " Plugin Section
   Plug 'dracula/vim'
+  Plug 'tomasiser/vim-code-dark'
   Plug 'psliwka/vim-smoothie'
   Plug 'scrooloose/nerdtree'
   Plug 'Shougo/deoplete.nvim',  {'do': ':UpdateRemotePlugins' }
@@ -64,6 +65,13 @@ set textwidth=79
 set formatoptions=qrn1
 set colorcolumn=85
 
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
 " Map ; to : so that it is easier to save files
 nnoremap ; :
 
@@ -80,7 +88,8 @@ set number relativenumber
 set nu rnu
 set bg=dark
 "colorscheme gruvbox
-colorscheme dracula
+"colorscheme dracula
+colorscheme codedark
 
 " Tabs
 set tabstop=4
